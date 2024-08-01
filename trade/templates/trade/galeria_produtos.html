@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Galeria de Produtos</title>
+    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/galeria_produtos.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="{% static 'trade/images/trade.agile.png' %}" alt="Logo" class="logo">
+            <ul>
+                <li class="topico"><a href="{% url 'home' %}">Início</a></li>
+                <li class="topico"><a href="{% url 'cadastro_clientes' %}">Cadastro</a></li>
+                <li class="topico"><a href="{% url 'demonstrativo_tabelas' %}">Tabela</a></li>
+                <li class="topico"><a href="{% url 'realizar_venda' %}">Vendas</a></li>
+                <li class="topico-atual"><a href="{% url 'galeria_produtos' %}">Galeria</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="gallery">
+        {% for produto in produtos %}
+        <div class="produto">
+            <img src="{% static 'trade/images/trade.agile.png' %}" alt="Logo" class="logo">
+            <div class="produto-info">
+                <h2>{{ produto.descprod }}</h2>
+                <p>Código: {{ produto.codiprod }}</p>
+                <p>Valor: R$ {{ produto.valorprod }}</p>
+                <p>Situação: {{ produto.situprod }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Trade.Agile - Todos os direitos reservados ao Senai.</p>
+        <p><a href="#">Termos e Condições</a> | <a href="#">Política e Privacidade</a></p>
+    </footer>
+</body>
+</html>

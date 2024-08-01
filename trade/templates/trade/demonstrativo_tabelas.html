@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demonstrativo das Tabelas</title>
+    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/demonstrativo_tabelas.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="{% static 'trade/images/trade.agile.png' %}" alt="Logo" class="logo">
+            <ul>
+                <li class="topico"><a href="{% url 'home' %}">Início</a></li>
+                <li class="topico"><a href="{% url 'cadastro_clientes' %}">Cadastro</a></li>
+                <li class="topico-atual"><a href="{% url 'demonstrativo_tabelas' %}">Tabela</a></li>
+                <li class="topico"><a href="{% url 'realizar_venda' %}">Vendas</a></li>
+                <li class="topico"><a href="{% url 'galeria_produtos' %}">Galeria</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="table-container">
+            <h2>Clientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Código</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.nomecli }}</td>
+                        <td>{{ cliente.codcli }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h2>Fornecedores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Código</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fornecedor in fornecedores %}
+                    <tr>
+                        <td>{{ fornecedor.nomeforn }}</td>
+                        <td>{{ fornecedor.codiforn }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h2>Produtos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Código</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for produto in produtos %}
+                    <tr>
+                        <td>{{ produto.descprod }}</td>
+                        <td>{{ produto.codiprod }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h2>Vendas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código da Venda</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for venda in vendas %}
+                    <tr>
+                        <td>{{ venda.codivend }}</td>
+                        <td>{{ venda.valorvend }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Trade.Agile - Todos os direitos reservados ao Senai.</p>
+        <p><a href="#">Termos e Condições</a> | <a href="#">Política e Privacidade</a></p>
+    </footer>
+</body>
+</html>

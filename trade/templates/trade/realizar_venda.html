@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Realizar Venda</title>
+    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/realizar_venda.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="{% static 'trade/images/trade.agile.png' %}" alt="Logo" class="logo">
+            <ul>
+                <li class="topico"><a href="{% url 'home' %}">Início</a></li>
+                <li class="topico"><a href="{% url 'cadastro_clientes' %}">Cadastro</a></li>
+                <li class="topico"><a href="{% url 'demonstrativo_tabelas' %}">Tabela</a></li>
+                <li class="topico-atual"><a href="{% url 'realizar_venda' %}">Vendas</a></li>
+                <li class="topico"><a href="{% url 'galeria_produtos' %}">Galeria</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Realizar Venda</h1>
+
+<form method="post" class="form-cadastro">
+    {% csrf_token %}
+    <label for="cliente">Cliente:</label>
+    <select id="cliente" name="cliente">
+        {% for cliente in clientes %}
+        <option value="{{ cliente.idcli }}">{{ cliente.nomecli }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="produto">Produto:</label>
+    <select id="produto" name="produto">
+        {% for produto in produtos %}
+        <option value="{{ produto.idprod }}">{{ produto.descprod }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" id="quantidade" name="quantidade" min="1">
+
+    <button type="submit" class="btn-submit">Realizar Venda</button>
+</form>
+
+    <footer>
+        <p>&copy; 2024 Trade.Agile -  Todos os direitos reservados ao Senai.</p>
+        <p><a href="#">Termos e Condições</a> | <a href="#">Política e Privacidade</a></p>
+    </footer>
+</body>
+</html>
