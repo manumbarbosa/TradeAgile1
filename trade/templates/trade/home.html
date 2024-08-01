@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Trade.Agile - Home</title>
-    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
+    <!-- Carrega o arquivo de estilos CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 </head>
 
 <body>
+    <!-- Cabeçalho da página -->
     <header>
         <nav>
+            <!-- Logo -->
             <img src="{% static 'trade/images/trade.agile.png' %}" alt="Logo" class="logo">
+            <!-- Lista de links de navegação -->
             <ul>
                 <li class="topico-atual"><a href="{% url 'home' %}">Início</a></li>
                 <li class="topico"><a href="{% url 'cadastro_clientes' %}">Cadastro</a></li>
@@ -22,19 +26,24 @@
         </nav>
     </header>
 
+    <!-- Conteúdo principal -->
     <div class="main-content">
+        <!-- Conteúdo à esquerda -->
         <div class="left-content">
             <h1>Bem-vindo à Trade.Agile!</h1>
-            <p>Estamos aqui para ajudá-lo a gerenciar suas vendas de forma eficiente e eficaz. Com nosso sistema, você pode facilmente realizar vendas, ver a galeria de produtos e as tabelas de produto, cliente, fornecedor e vendas contendo todas as informações necessárias.
-Nosso objetivo é fornecer uma ferramenta intuitiva e fácil de usar, permitindo que você se concentre no que realmente importa: atender aos seus clientes e crescer seu negócio.</p>
+            <p>Estamos aqui para ajudá-lo a gerenciar suas vendas de forma eficiente e eficaz. Com nosso sistema, você pode facilmente realizar vendas, ver a galeria de produtos e as tabelas de produto, cliente, fornecedor e vendas contendo todas as informações necessárias. Nosso objetivo é fornecer uma ferramenta intuitiva e fácil de usar, permitindo que você se concentre no que realmente importa: atender aos seus clientes e crescer seu negócio.</p>
         </div>
+        <!-- Conteúdo à direita -->
         <div class="right-content">
             <img src="{% static 'trade/images/Home2.png' %}" alt="Imagem de Destaque">
         </div>
     </div>
 
+    <!-- Rodapé da página -->
     <footer>
+        <!-- Informações de direitos autorais -->
         <p>&copy; 2024 Trade.Agile - Todos os direitos reservados ao Senai.</p>
+        <!-- Links para termos e política de privacidade -->
         <p><a href="#">Termos e Condições</a> | <a href="#">Política e Privacidade</a></p>
     </footer>
 </body>

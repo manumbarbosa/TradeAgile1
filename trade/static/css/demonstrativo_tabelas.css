@@ -1,124 +1,131 @@
 /* Estilizar o header */
 header {
-     background-color: #000000;
-    color: #ffffff;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
+    background-color: #000000; /* Cor de fundo preta */
+    color: #ffffff; /* Cor do texto branca */
+    padding: 0; /* Remover padding padrão */
+    display: flex; /* Usar flexbox para layout */
+    justify-content: space-between; /* Espaçamento entre elementos */
+    align-items: center; /* Centralizar itens verticalmente */
+    height: 70px; /* Altura do cabeçalho */
 }
 
+/* Estilizar a logo no header */
 .logo {
-    float: left;
-    margin-right: 20px;
-    margin-left: 10px;
-    width: 90px; /* ajuste a largura da logo */
-    height: 45px; /* ajuste a altura da logo */
+    float: left; /* Flutuar à esquerda */
+    margin-right: 20px; /* Margem à direita */
+    margin-left: 10px; /* Margem à esquerda */
+    width: 90px; /* Largura da logo */
+    height: 45px; /* Altura da logo */
 }
 
+/* Estilizar a lista de navegação */
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 222px;
+    list-style-type: none; /* Remover marcadores de lista */
+    margin: 0; /* Remover margem padrão */
+    padding: 0; /* Remover padding padrão */
+    display: flex; /* Usar flexbox para layout */
+    justify-content: center; /* Centralizar itens horizontalmente */
+    gap: 222px; /* Espaçamento entre os itens */
 }
 
+/* Estilizar os links de navegação */
 nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    padding-bottom: 8px;
-    transition: color 0.3s;
-    position: relative;
-    font-size: 12px;
+    color: #ffffff; /* Cor do texto branca */
+    text-decoration: none; /* Remover decoração de link */
+    font-weight: bold; /* Texto em negrito */
+    padding-bottom: 8px; /* Espaçamento inferior */
+    transition: color 0.3s; /* Transição suave de cor */
+    position: relative; /* Posição relativa para pseudoelementos */
+    font-size: 12px; /* Tamanho da fonte */
 }
 
+/* Efeito de linha nos links de navegação ao passar o mouse */
 nav a:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #1E5E8B;
-    bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
+    content: ''; /* Criar elemento pseudoelemento */
+    position: absolute; /* Posição absoluta */
+    width: 100%; /* Largura total */
+    height: 2px; /* Altura da linha */
+    background-color: #1E5E8B; /* Cor da linha */
+    bottom: 0; /* Alinhar na parte inferior */
+    left: 0; /* Alinhar à esquerda */
+    transform: scaleX(0); /* Esconder linha inicialmente */
+    transform-origin: bottom right; /* Origem da transformação */
+    transition: transform 0.3s ease-out; /* Transição suave */
 }
 
+/* Efeito de expansão da linha nos links ao passar o mouse */
 nav a:hover:before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    transform: scaleX(1); /* Expandir linha */
+    transform-origin: bottom left; /* Origem da transformação */
 }
 
+/* Espaçamento entre itens de navegação */
 .nav-item {
-    margin-right: 30px;
-}
-
-nav .topico-atual a:before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    margin-right: 30px; /* Espaço à direita entre itens */
 }
 
 /* Estilizar o footer */
 footer {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 3px;
-    text-align: center;
-    font-size: 10px;
-    bottom: 0;
-    width: 100%;
+    background-color: #000000; /* Cor de fundo preta */
+    color: #ffffff; /* Cor do texto branca */
+    padding: 3px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento central */
+    font-size: 10px; /* Tamanho da fonte */
+    bottom: 0; /* Alinhar ao rodapé */
+    width: 100%; /* Largura total */
 }
 
-/* Estilizar as tabelas */
+/* Estilizar o container da tabela */
 .table-container {
-    margin-bottom: 30px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-bottom: 30px; /* Espaçamento inferior */
+    background-color: #fff; /* Cor de fundo branca */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    overflow: hidden; /* Ocultar conteúdo que transborda */
+    margin-top: 10px; /* Espaçamento superior */
+    margin-left: 10px; /* Margem à esquerda */
+    margin-right: 10px; /* Margem à direita */
 }
 
+/* Estilizar o título da tabela */
 .table-container h2 {
-    background-color: #1e5e8b;
-    color: #fff;
-    padding: 10px;
-    margin: 0;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    text-align: center;
+    background-color: #1e5e8b; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branca */
+    padding: 10px; /* Espaçamento interno */
+    margin: 0; /* Remover margem padrão */
+    border-top-left-radius: 5px; /* Borda arredondada superior esquerda */
+    border-top-right-radius: 5px; /* Borda arredondada superior direita */
+    text-align: center; /* Alinhamento central */
 }
 
+/* Estilizar a tabela */
 table {
-    width: 100%;
-    border-collapse: collapse;
-
+    width: 100%; /* Largura total */
+    border-collapse: collapse; /* Colapso das bordas da tabela */
 }
 
+/* Estilizar cabeçalhos e células da tabela */
 th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    padding: 12px 15px; /* Espaçamento interno */
+    text-align: left; /* Alinhamento à esquerda */
+    border-bottom: 1px solid #ddd; /* Borda inferior */
 }
 
+/* Estilizar cabeçalhos da tabela */
 th {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* Cor de fundo cinza claro */
 }
 
+/* Efeito de hover nas linhas da tabela */
 table tbody tr:hover {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Cor de fundo ao passar o mouse */
 }
+
+/* Estilizar o corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    overflow-x: hidden;
+    font-family: 'Arial', sans-serif; /* Fonte padrão */
+    margin: 0; /* Remover margens padrão */
+    padding: 0; /* Remover padding padrão */
+    background-color: #ffffff; /* Cor de fundo branca */
+    overflow-x: hidden; /* Ocultar rolagem horizontal */
 }

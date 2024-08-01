@@ -2,14 +2,19 @@
 <html>
 <head>
     <title>Demonstrativo das Tabelas</title>
-    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
+    <!-- Carrega o arquivo de estilos CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/demonstrativo_tabelas.css' %}">
 </head>
 <body>
+    <!-- Cabeçalho da página -->
     <header>
+        <!-- Navegação -->
         <nav>
+            <!-- Logo -->
             <img src="{% static 'trade/images/trade.agile.png' %}" alt="Logo" class="logo">
+            <!-- Lista de links -->
             <ul>
                 <li class="topico"><a href="{% url 'home' %}">Início</a></li>
                 <li class="topico"><a href="{% url 'cadastro_clientes' %}">Cadastro</a></li>
@@ -20,7 +25,9 @@
         </nav>
     </header>
 
+    <!-- Container principal -->
     <div class="container">
+        <!-- Container da tabela de Clientes -->
         <div class="table-container">
             <h2>Clientes</h2>
             <table>
@@ -31,6 +38,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Loop para exibir cada cliente -->
                     {% for cliente in clientes %}
                     <tr>
                         <td>{{ cliente.nomecli }}</td>
@@ -41,6 +49,7 @@
             </table>
         </div>
 
+        <!-- Container da tabela de Fornecedores -->
         <div class="table-container">
             <h2>Fornecedores</h2>
             <table>
@@ -51,6 +60,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Loop para exibir cada fornecedor -->
                     {% for fornecedor in fornecedores %}
                     <tr>
                         <td>{{ fornecedor.nomeforn }}</td>
@@ -61,6 +71,7 @@
             </table>
         </div>
 
+        <!-- Container da tabela de Produtos -->
         <div class="table-container">
             <h2>Produtos</h2>
             <table>
@@ -71,6 +82,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Loop para exibir cada produto -->
                     {% for produto in produtos %}
                     <tr>
                         <td>{{ produto.descprod }}</td>
@@ -81,6 +93,7 @@
             </table>
         </div>
 
+        <!-- Container da tabela de Vendas -->
         <div class="table-container">
             <h2>Vendas</h2>
             <table>
@@ -91,6 +104,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Loop para exibir cada venda -->
                     {% for venda in vendas %}
                     <tr>
                         <td>{{ venda.codivend }}</td>
@@ -102,8 +116,11 @@
         </div>
     </div>
 
+    <!-- Rodapé da página -->
     <footer>
+        <!-- Informações de direitos autorais -->
         <p>&copy; 2024 Trade.Agile - Todos os direitos reservados ao Senai.</p>
+        <!-- Links para termos e política de privacidade -->
         <p><a href="#">Termos e Condições</a> | <a href="#">Política e Privacidade</a></p>
     </footer>
 </body>

@@ -2,14 +2,19 @@
 <html>
 <head>
     <title>Galeria de Produtos</title>
-    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
+    <!-- Carrega o arquivo de estilos CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/galeria_produtos.css' %}">
 </head>
 <body>
+    <!-- Cabeçalho da página -->
     <header>
+        <!-- Navegação -->
         <nav>
+            <!-- Logo -->
             <img src="{% static 'trade/images/trade.agile.png' %}" alt="Logo" class="logo">
+            <!-- Lista de links -->
             <ul>
                 <li class="topico"><a href="{% url 'home' %}">Início</a></li>
                 <li class="topico"><a href="{% url 'cadastro_clientes' %}">Cadastro</a></li>
@@ -19,10 +24,15 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Container da galeria de produtos -->
     <div class="gallery">
+        <!-- Loop para exibir cada produto -->
         {% for produto in produtos %}
         <div class="produto">
-            <img src="{% static 'trade/images/trade.agile.png' %}" alt="Logo" class="logo">
+            <!-- Imagem do produto -->
+            <img src="{% static 'trade/images/trade.agile.png' %}" alt="Imagem do Produto">
+            <!-- Informações do produto -->
             <div class="produto-info">
                 <h2>{{ produto.descprod }}</h2>
                 <p>Código: {{ produto.codiprod }}</p>
@@ -33,8 +43,11 @@
         {% endfor %}
     </div>
 
+    <!-- Rodapé da página -->
     <footer>
+        <!-- Informações de direitos autorais -->
         <p>&copy; 2024 Trade.Agile - Todos os direitos reservados ao Senai.</p>
+        <!-- Links para termos e política de privacidade -->
         <p><a href="#">Termos e Condições</a> | <a href="#">Política e Privacidade</a></p>
     </footer>
 </body>

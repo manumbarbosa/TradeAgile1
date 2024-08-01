@@ -1,69 +1,118 @@
+/* Estilização básica do corpo da página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: red;
+    font-family: 'Arial', sans-serif; /* Fonte padrão */
+    margin: 0; /* Remover margens padrão */
+    padding: 0; /* Remover padding padrão */
+    background-color: #ffffff; /* Cor de fundo branca */
+    overflow-x: hidden; /* Ocultar rolagem horizontal */
 }
 
+/* Estilização do cabeçalho */
 header {
-    background-color: #f2f2f2;
-    padding: 10px 0;
+    background-color: #000000; /* Cor de fundo preta */
+    color: #ffffff; /* Cor do texto branca */
+    padding: 0; /* Remover padding padrão */
+    display: flex; /* Usar flexbox para layout */
+    justify-content: space-between; /* Espaçamento entre elementos */
+    align-items: center; /* Centralizar itens verticalmente */
+    height: 70px; /* Altura do cabeçalho */
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Estilização da lista de navegação */
+nav ul {
+    list-style-type: none; /* Remover marcadores de lista */
+    margin: 0; /* Remover margem padrão */
+    padding: 0; /* Remover padding padrão */
+    display: flex; /* Usar flexbox para layout */
+    justify-content: center; /* Centralizar itens horizontalmente */
+    gap: 222px; /* Espaçamento entre os itens */
 }
 
+/* Estilização dos links de navegação */
+nav a {
+    color: #ffffff; /* Cor do texto branca */
+    text-decoration: none; /* Remover decoração de link */
+    font-weight: bold; /* Texto em negrito */
+    padding-bottom: 8px; /* Espaçamento inferior */
+    transition: color 0.3s; /* Transição suave de cor */
+    position: relative; /* Posição relativa para pseudoelementos */
+    font-size: 12px; /* Tamanho da fonte */
+}
+
+/* Efeito de linha nos links de navegação ao passar o mouse */
+nav a:before {
+    content: ''; /* Criar elemento pseudoelemento */
+    position: absolute; /* Posição absoluta */
+    width: 100%; /* Largura total */
+    height: 2px; /* Altura da linha */
+    background-color: #1E5E8B; /* Cor da linha */
+    bottom: 0; /* Alinhar na parte inferior */
+    left: 0; /* Alinhar à esquerda */
+    transform: scaleX(0); /* Esconder linha inicialmente */
+    transform-origin: bottom right; /* Origem da transformação */
+    transition: transform 0.3s ease-out; /* Transição suave */
+}
+
+/* Efeito de expansão da linha nos links ao passar o mouse */
+nav a:hover:before {
+    transform: scaleX(1); /* Expandir linha */
+    transform-origin: bottom left; /* Origem da transformação */
+}
+
+/* Espaçamento entre itens de navegação */
+.nav-item {
+    margin-right: 30px; /* Espaço à direita entre itens */
+}
+
+/* Estilização da logo no cabeçalho */
 .logo {
-    height: 50px;
-    width: auto;
+    float: left; /* Flutuar à esquerda */
+    margin-right: 20px; /* Margem à direita */
+    margin-left: 10px; /* Margem à esquerda */
+    width: 90px; /* Largura da logo */
+    height: 45px; /* Altura da logo */
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-ul li {
-    margin-right: 20px;
-}
-
+/* Estilização do conteúdo principal */
 .main-content {
-    display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+    display: flex; /* Usar flexbox para layout */
+    max-width: 1200px; /* Largura máxima do conteúdo principal */
+    margin: 20px auto; /* Margem automática nas laterais e espaçamento superior/inferior */
+    padding: 0 20px; /* Padding interno nas laterais */
 }
 
+/* Estilização do lado esquerdo do conteúdo principal */
 .left-content {
-    flex: 1;
-    padding-right: 20px;
+    flex: 1; /* Crescer para ocupar espaço disponível */
+    padding-right: 20px; /* Espaçamento interno à direita */
+    font-weight: bold; /* Texto em negrito */
+    margin-top: 30px; /* Espaçamento superior */
 }
 
+/* Estilização do lado direito do conteúdo principal */
 .right-content {
-    flex: 1;
-    order: -1; /* Altera a ordem dos elementos flexíveis para colocar .right-content primeiro */
+    flex: 1; /* Crescer para ocupar espaço disponível */
+    order: 1; /* Alterar a ordem dos elementos flexíveis para colocar .right-content primeiro */
 }
 
+/* Estilização da imagem no lado direito do conteúdo principal */
 .right-content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%; /* Largura máxima da imagem */
+    height: auto; /* Altura automática */
+    display: block; /* Exibir como bloco para centralizar */
+    margin-left: auto; /* Margem à esquerda automática */
+    margin-right: auto; /* Margem à direita automática */
+    margin-top: 62px; /* Espaçamento superior */
 }
 
+/* Estilização do rodapé */
 footer {
-    background-color: #f2f2f2;
-    padding: 10px 0;
-    text-align: center;
-    max-width: 1200px;
-    margin: 20px auto;
+    background-color: #000000; /* Cor de fundo preta */
+    color: #ffffff; /* Cor do texto branca */
+    padding: 3px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento central */
+    font-size: 10px; /* Tamanho da fonte */
+    position: absolute; /* Posição absoluta */
+    bottom: 0; /* Alinhar ao rodapé */
+    width: 100%; /* Largura total */
 }

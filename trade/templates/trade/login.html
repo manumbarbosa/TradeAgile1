@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Definição da codificação de caracteres -->
     <meta charset="UTF-8">
+    <!-- Título da página -->
     <title>Login</title>
+    <!-- Inclusão do Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Carrega arquivos estáticos -->
     {% load static %}
+    <!-- Inclusão do arquivo de estilo personalizado -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 </head>
 <body>
+    <!-- Container principal usando Bootstrap -->
     <div class="container">
+        <!-- Título do formulário -->
         <h2>Login</h2>
+        <!-- Formulário de login usando método POST -->
         <form method="post" class="form-group">
+            <!-- Token CSRF para segurança -->
             {% csrf_token %}
+            <!-- Renderiza campos do formulário como parágrafos -->
             {{ form.as_p }}
+            <!-- Botão de submissão do formulário -->
             <button type="submit" class="btn">Login</button>
         </form>
+        <!-- Link para página de registro -->
         <p>Não tem conta? <a href="{% url 'register' %}">Registrar</a>.</p>
     </div>
+    <!-- Inclusão do jQuery para funcionalidades JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Inclusão do Popper.js para suporte ao Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></script>
+    <!-- Inclusão do Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
